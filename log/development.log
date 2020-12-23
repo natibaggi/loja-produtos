@@ -7121,3 +7121,1049 @@ Processing by ProdutosController#index as HTML
 Completed 200 OK in 49ms (Views: 46.5ms | ActiveRecord: 0.8ms)
 
 
+Started GET "/" for 127.0.0.1 at 2020-12-23 13:23:28 -0300
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/natibaggi/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by ProdutosController#index as HTML
+  Rendering produtos/index.html.erb within layouts/application
+  [1m[36mProduto Load (2.1ms)[0m  [1m[34mSELECT "produtos".* FROM "produtos" ORDER BY "produtos"."nome" ASC[0m
+  ↳ app/views/produtos/index.html.erb:27
+  [1m[36mDepartamento Load (0.6ms)[0m  [1m[34mSELECT  "departamentos".* FROM "departamentos" WHERE "departamentos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/produtos/index.html.erb:31
+  [1m[36mDepartamento Load (0.2ms)[0m  [1m[34mSELECT  "departamentos".* FROM "departamentos" WHERE "departamentos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/produtos/index.html.erb:31
+  [1m[36mProduto Load (0.5ms)[0m  [1m[34mSELECT  "produtos".* FROM "produtos" ORDER BY "produtos"."preco" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/produtos/index.html.erb:63
+  [1m[36mDepartamento Load (0.1ms)[0m  [1m[34mSELECT  "departamentos".* FROM "departamentos" WHERE "departamentos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/produtos/index.html.erb:67
+  Rendered produtos/index.html.erb within layouts/application (129.4ms)
+Completed 200 OK in 577ms (Views: 549.2ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/produtos/new" for 127.0.0.1 at 2020-12-23 13:23:35 -0300
+Processing by ProdutosController#new as HTML
+  Rendering produtos/new.html.erb within layouts/application
+  [1m[36mDepartamento Load (0.2ms)[0m  [1m[34mSELECT "departamentos".* FROM "departamentos"[0m
+  ↳ app/views/produtos/new.html.erb:31
+  Rendered produtos/new.html.erb within layouts/application (555.9ms)
+Completed 200 OK in 607ms (Views: 597.0ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/produtos" for 127.0.0.1 at 2020-12-23 13:23:53 -0300
+Processing by ProdutosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KyltrJuKeT4z864YET5zKE7NfgDY4kYzfY0a5zWhgPyQVm8AyfVQ0oYCXI0pku8BPkHE7T+Zk5QQXKPNiI+DXQ==", "produto"=>{"nome"=>"Apagar", "descricao"=>"para apagar", "departamento_id"=>"1", "preco"=>"234", "quantidade"=>"23"}, "commit"=>"Criar"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/produtos_controller.rb:18
+  [1m[36mProduto Create (1.3ms)[0m  [1m[32mINSERT INTO "produtos" ("nome", "descricao", "preco", "quantidade", "created_at", "updated_at", "departamento_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["nome", "Apagar"], ["descricao", "para apagar"], ["preco", 234.0], ["quantidade", 23], ["created_at", "2020-12-23 16:23:53.191436"], ["updated_at", "2020-12-23 16:23:53.191436"], ["departamento_id", 1]]
+  ↳ app/controllers/produtos_controller.rb:18
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/produtos_controller.rb:18
+Redirected to http://localhost:3000/
+Completed 302 Found in 33ms (ActiveRecord: 3.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-12-23 13:23:53 -0300
+Processing by ProdutosController#index as HTML
+  Rendering produtos/index.html.erb within layouts/application
+  [1m[36mProduto Load (0.4ms)[0m  [1m[34mSELECT "produtos".* FROM "produtos" ORDER BY "produtos"."nome" ASC[0m
+  ↳ app/views/produtos/index.html.erb:27
+  [1m[36mDepartamento Load (0.2ms)[0m  [1m[34mSELECT  "departamentos".* FROM "departamentos" WHERE "departamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/produtos/index.html.erb:31
+  [1m[36mDepartamento Load (0.2ms)[0m  [1m[34mSELECT  "departamentos".* FROM "departamentos" WHERE "departamentos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/produtos/index.html.erb:31
+  [1m[36mCACHE Departamento Load (0.0ms)[0m  [1m[34mSELECT  "departamentos".* FROM "departamentos" WHERE "departamentos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/produtos/index.html.erb:31
+  [1m[36mProduto Load (0.6ms)[0m  [1m[34mSELECT  "produtos".* FROM "produtos" ORDER BY "produtos"."preco" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/produtos/index.html.erb:63
+  [1m[36mCACHE Departamento Load (0.0ms)[0m  [1m[34mSELECT  "departamentos".* FROM "departamentos" WHERE "departamentos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/produtos/index.html.erb:67
+  Rendered produtos/index.html.erb within layouts/application (47.7ms)
+Completed 200 OK in 115ms (Views: 112.1ms | ActiveRecord: 1.5ms)
+
+
+Started DELETE "/produtos/50" for 127.0.0.1 at 2020-12-23 13:24:03 -0300
+Processing by ProdutosController#destroy as HTML
+  Parameters: {"authenticity_token"=>"ynSKHc0KDBGiGslSMakad5N0kvRZn0fiUYPBNDS7ZmTYfsoUDrrWDMFu4ufPyVywSbOm/E16zNTHTSlG4QY0Hw==", "id"=>"50"}
+  [1m[36mProduto Load (0.3ms)[0m  [1m[34mSELECT  "produtos".* FROM "produtos" WHERE "produtos"."id" = ? LIMIT ?[0m  [["id", 50], ["LIMIT", 1]]
+  ↳ app/controllers/produtos_controller.rb:39
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/produtos_controller.rb:39
+  [1m[36mProduto Destroy (0.7ms)[0m  [1m[31mDELETE FROM "produtos" WHERE "produtos"."id" = ?[0m  [["id", 50]]
+  ↳ app/controllers/produtos_controller.rb:39
+  [1m[35m (6.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/produtos_controller.rb:39
+Redirected to http://localhost:3000/
+Completed 302 Found in 13ms (ActiveRecord: 7.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-12-23 13:24:03 -0300
+Processing by ProdutosController#index as HTML
+  Rendering produtos/index.html.erb within layouts/application
+  [1m[36mProduto Load (0.3ms)[0m  [1m[34mSELECT "produtos".* FROM "produtos" ORDER BY "produtos"."nome" ASC[0m
+  ↳ app/views/produtos/index.html.erb:27
+  [1m[36mDepartamento Load (0.1ms)[0m  [1m[34mSELECT  "departamentos".* FROM "departamentos" WHERE "departamentos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/produtos/index.html.erb:31
+  [1m[36mCACHE Departamento Load (0.0ms)[0m  [1m[34mSELECT  "departamentos".* FROM "departamentos" WHERE "departamentos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/produtos/index.html.erb:31
+  [1m[36mProduto Load (0.5ms)[0m  [1m[34mSELECT  "produtos".* FROM "produtos" ORDER BY "produtos"."preco" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/produtos/index.html.erb:63
+  [1m[36mCACHE Departamento Load (0.0ms)[0m  [1m[34mSELECT  "departamentos".* FROM "departamentos" WHERE "departamentos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/produtos/index.html.erb:67
+  Rendered produtos/index.html.erb within layouts/application (32.1ms)
+Completed 200 OK in 107ms (Views: 103.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/produtos/48/edit" for 127.0.0.1 at 2020-12-23 13:24:05 -0300
+Processing by ProdutosController#edit as HTML
+  Parameters: {"id"=>"48"}
+  [1m[36mProduto Load (0.2ms)[0m  [1m[34mSELECT  "produtos".* FROM "produtos" WHERE "produtos"."id" = ? LIMIT ?[0m  [["id", 48], ["LIMIT", 1]]
+  ↳ app/controllers/produtos_controller.rb:28
+  Rendering produtos/new.html.erb within layouts/application
+  [1m[36mDepartamento Load (0.2ms)[0m  [1m[34mSELECT "departamentos".* FROM "departamentos"[0m
+  ↳ app/views/produtos/new.html.erb:31
+  Rendered produtos/new.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 45ms (Views: 42.4ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/produtos/48" for 127.0.0.1 at 2020-12-23 13:24:13 -0300
+Processing by ProdutosController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5aNyJko3d2CkvvWXLnmdNmnPAjwDz+rWbm81/sSRJSG+gX8XYgBT4iMa73XmpfGh/LoeBK10b8BeVeivZvkQrg==", "produto"=>{"nome"=>"Cadeira", "descricao"=>"Boa para sentar", "departamento_id"=>"2", "preco"=>"230.0", "quantidade"=>"10"}, "commit"=>"Criar", "id"=>"48"}
+No template found for ProdutosController#update, rendering head :no_content
+Completed 204 No Content in 55ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-12-23 13:24:21 -0300
+Processing by ProdutosController#index as HTML
+  Rendering produtos/index.html.erb within layouts/application
+  [1m[36mProduto Load (0.4ms)[0m  [1m[34mSELECT "produtos".* FROM "produtos" ORDER BY "produtos"."nome" ASC[0m
+  ↳ app/views/produtos/index.html.erb:27
+  [1m[36mDepartamento Load (0.2ms)[0m  [1m[34mSELECT  "departamentos".* FROM "departamentos" WHERE "departamentos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/produtos/index.html.erb:31
+  [1m[36mCACHE Departamento Load (0.1ms)[0m  [1m[34mSELECT  "departamentos".* FROM "departamentos" WHERE "departamentos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/produtos/index.html.erb:31
+  [1m[36mProduto Load (0.5ms)[0m  [1m[34mSELECT  "produtos".* FROM "produtos" ORDER BY "produtos"."preco" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/produtos/index.html.erb:63
+  [1m[36mCACHE Departamento Load (0.0ms)[0m  [1m[34mSELECT  "departamentos".* FROM "departamentos" WHERE "departamentos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/produtos/index.html.erb:67
+  Rendered produtos/index.html.erb within layouts/application (20.9ms)
+Completed 200 OK in 75ms (Views: 71.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/produtos/new" for 127.0.0.1 at 2020-12-23 13:30:25 -0300
+Processing by ProdutosController#new as HTML
+  Rendering produtos/new.html.erb within layouts/application
+  [1m[36mDepartamento Load (0.2ms)[0m  [1m[34mSELECT "departamentos".* FROM "departamentos"[0m
+  ↳ app/views/produtos/new.html.erb:31
+  Rendered produtos/new.html.erb within layouts/application (11.2ms)
+Completed 200 OK in 62ms (Views: 44.8ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-12-23 13:30:28 -0300
+Processing by ProdutosController#index as HTML
+  Rendering produtos/index.html.erb within layouts/application
+  [1m[36mProduto Load (0.3ms)[0m  [1m[34mSELECT "produtos".* FROM "produtos" ORDER BY "produtos"."nome" ASC[0m
+  ↳ app/views/produtos/index.html.erb:27
+  [1m[36mDepartamento Load (0.5ms)[0m  [1m[34mSELECT  "departamentos".* FROM "departamentos" WHERE "departamentos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/produtos/index.html.erb:31
+  [1m[36mCACHE Departamento Load (0.0ms)[0m  [1m[34mSELECT  "departamentos".* FROM "departamentos" WHERE "departamentos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/produtos/index.html.erb:31
+  [1m[36mProduto Load (0.3ms)[0m  [1m[34mSELECT  "produtos".* FROM "produtos" ORDER BY "produtos"."preco" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/produtos/index.html.erb:63
+  [1m[36mCACHE Departamento Load (0.0ms)[0m  [1m[34mSELECT  "departamentos".* FROM "departamentos" WHERE "departamentos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/produtos/index.html.erb:67
+  Rendered produtos/index.html.erb within layouts/application (27.6ms)
+Completed 200 OK in 74ms (Views: 70.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/produtos/48/edit" for 127.0.0.1 at 2020-12-23 13:30:30 -0300
+Processing by ProdutosController#edit as HTML
+  Parameters: {"id"=>"48"}
+  [1m[36mProduto Load (1.4ms)[0m  [1m[34mSELECT  "produtos".* FROM "produtos" WHERE "produtos"."id" = ? LIMIT ?[0m  [["id", 48], ["LIMIT", 1]]
+  ↳ app/controllers/produtos_controller.rb:28
+  Rendering produtos/new.html.erb within layouts/application
+  [1m[36mDepartamento Load (0.3ms)[0m  [1m[34mSELECT "departamentos".* FROM "departamentos"[0m
+  ↳ app/views/produtos/new.html.erb:31
+  Rendered produtos/new.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 75ms (Views: 70.3ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/rails/info/routes" for 127.0.0.1 at 2020-12-23 13:32:14 -0300
+Processing by Rails::InfoController#routes as HTML
+  Rendering /Users/natibaggi/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/railties-5.2.1/lib/rails/templates/rails/info/routes.html.erb within layouts/application
+  Rendered collection of /Users/natibaggi/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/actionpack-5.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [23 times] (12.9ms)
+  Rendered /Users/natibaggi/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/actionpack-5.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (5.9ms)
+  Rendered /Users/natibaggi/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/railties-5.2.1/lib/rails/templates/rails/info/routes.html.erb within layouts/application (29.7ms)
+Completed 200 OK in 42ms (Views: 36.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/produtos/new" for 127.0.0.1 at 2020-12-23 13:36:23 -0300
+Processing by ProdutosController#new as HTML
+  Rendering produtos/new.html.erb within layouts/application
+  [1m[36mDepartamento Load (0.2ms)[0m  [1m[34mSELECT "departamentos".* FROM "departamentos"[0m
+  ↳ app/views/produtos/new.html.erb:31
+  Rendered produtos/new.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 60ms (Views: 57.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/produtos/new" for 127.0.0.1 at 2020-12-23 13:36:27 -0300
+Processing by ProdutosController#new as HTML
+  Rendering produtos/new.html.erb within layouts/application
+  [1m[36mDepartamento Load (0.2ms)[0m  [1m[34mSELECT "departamentos".* FROM "departamentos"[0m
+  ↳ app/views/produtos/new.html.erb:31
+  Rendered produtos/new.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 49ms (Views: 46.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/produtos/new" for 127.0.0.1 at 2020-12-23 13:37:27 -0300
+Processing by ProdutosController#new as HTML
+  Rendering produtos/new.html.erb within layouts/application
+  [1m[36mDepartamento Load (0.9ms)[0m  [1m[34mSELECT "departamentos".* FROM "departamentos"[0m
+  ↳ app/views/produtos/new.html.erb:31
+  Rendered produtos/new.html.erb within layouts/application (17.8ms)
+Completed 200 OK in 115ms (Views: 81.9ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/produtos/new" for 127.0.0.1 at 2020-12-23 13:37:29 -0300
+Processing by ProdutosController#new as HTML
+  Rendering produtos/new.html.erb within layouts/application
+  [1m[36mDepartamento Load (0.3ms)[0m  [1m[34mSELECT "departamentos".* FROM "departamentos"[0m
+  ↳ app/views/produtos/new.html.erb:31
+  Rendered produtos/new.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 59ms (Views: 57.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/produtos/new" for 127.0.0.1 at 2020-12-23 13:37:30 -0300
+Processing by ProdutosController#new as HTML
+  Rendering produtos/new.html.erb within layouts/application
+  [1m[36mDepartamento Load (0.4ms)[0m  [1m[34mSELECT "departamentos".* FROM "departamentos"[0m
+  ↳ app/views/produtos/new.html.erb:31
+  Rendered produtos/new.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 67ms (Views: 65.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/produtos/48/edit" for 127.0.0.1 at 2020-12-23 13:40:00 -0300
+Processing by ProdutosController#edit as HTML
+  Parameters: {"id"=>"48"}
+  [1m[36mProduto Load (0.4ms)[0m  [1m[34mSELECT  "produtos".* FROM "produtos" WHERE "produtos"."id" = ? LIMIT ?[0m  [["id", 48], ["LIMIT", 1]]
+  ↳ app/controllers/produtos_controller.rb:30
+  Rendering produtos/new.html.erb within layouts/application
+  [1m[36mDepartamento Load (0.3ms)[0m  [1m[34mSELECT "departamentos".* FROM "departamentos"[0m
+  ↳ app/views/produtos/new.html.erb:44
+  Rendered produtos/new.html.erb within layouts/application (16.4ms)
+Completed 200 OK in 90ms (Views: 64.8ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/produtos/48/edit" for 127.0.0.1 at 2020-12-23 13:40:01 -0300
+Processing by ProdutosController#edit as HTML
+  Parameters: {"id"=>"48"}
+  [1m[36mProduto Load (0.2ms)[0m  [1m[34mSELECT  "produtos".* FROM "produtos" WHERE "produtos"."id" = ? LIMIT ?[0m  [["id", 48], ["LIMIT", 1]]
+  ↳ app/controllers/produtos_controller.rb:30
+  Rendering produtos/new.html.erb within layouts/application
+  [1m[36mDepartamento Load (0.5ms)[0m  [1m[34mSELECT "departamentos".* FROM "departamentos"[0m
+  ↳ app/views/produtos/new.html.erb:44
+  Rendered produtos/new.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 69ms (Views: 66.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/produtos/48/edit" for 127.0.0.1 at 2020-12-23 13:40:02 -0300
+Processing by ProdutosController#edit as HTML
+  Parameters: {"id"=>"48"}
+  [1m[36mProduto Load (0.2ms)[0m  [1m[34mSELECT  "produtos".* FROM "produtos" WHERE "produtos"."id" = ? LIMIT ?[0m  [["id", 48], ["LIMIT", 1]]
+  ↳ app/controllers/produtos_controller.rb:30
+  Rendering produtos/new.html.erb within layouts/application
+  [1m[36mDepartamento Load (0.3ms)[0m  [1m[34mSELECT "departamentos".* FROM "departamentos"[0m
+  ↳ app/views/produtos/new.html.erb:44
+  Rendered produtos/new.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 67ms (Views: 64.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/produtos/48/edit" for 127.0.0.1 at 2020-12-23 13:40:02 -0300
+Processing by ProdutosController#edit as HTML
+  Parameters: {"id"=>"48"}
+  [1m[36mProduto Load (0.3ms)[0m  [1m[34mSELECT  "produtos".* FROM "produtos" WHERE "produtos"."id" = ? LIMIT ?[0m  [["id", 48], ["LIMIT", 1]]
+  ↳ app/controllers/produtos_controller.rb:30
+  Rendering produtos/new.html.erb within layouts/application
+  [1m[36mDepartamento Load (0.3ms)[0m  [1m[34mSELECT "departamentos".* FROM "departamentos"[0m
+  ↳ app/views/produtos/new.html.erb:44
+  Rendered produtos/new.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 86ms (Views: 82.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/produtos/48/edit" for 127.0.0.1 at 2020-12-23 13:40:03 -0300
+Processing by ProdutosController#edit as HTML
+  Parameters: {"id"=>"48"}
+  [1m[36mProduto Load (0.2ms)[0m  [1m[34mSELECT  "produtos".* FROM "produtos" WHERE "produtos"."id" = ? LIMIT ?[0m  [["id", 48], ["LIMIT", 1]]
+  ↳ app/controllers/produtos_controller.rb:30
+  Rendering produtos/new.html.erb within layouts/application
+  [1m[36mDepartamento Load (0.4ms)[0m  [1m[34mSELECT "departamentos".* FROM "departamentos"[0m
+  ↳ app/views/produtos/new.html.erb:44
+  Rendered produtos/new.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 66ms (Views: 63.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/produtos/48/edit" for 127.0.0.1 at 2020-12-23 13:40:03 -0300
+Processing by ProdutosController#edit as HTML
+  Parameters: {"id"=>"48"}
+  [1m[36mProduto Load (0.2ms)[0m  [1m[34mSELECT  "produtos".* FROM "produtos" WHERE "produtos"."id" = ? LIMIT ?[0m  [["id", 48], ["LIMIT", 1]]
+  ↳ app/controllers/produtos_controller.rb:30
+  Rendering produtos/new.html.erb within layouts/application
+  [1m[36mDepartamento Load (0.3ms)[0m  [1m[34mSELECT "departamentos".* FROM "departamentos"[0m
+  ↳ app/views/produtos/new.html.erb:44
+  Rendered produtos/new.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 66ms (Views: 64.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/produtos/48/edit" for 127.0.0.1 at 2020-12-23 13:42:47 -0300
+Processing by ProdutosController#edit as HTML
+  Parameters: {"id"=>"48"}
+  [1m[36mProduto Load (0.3ms)[0m  [1m[34mSELECT  "produtos".* FROM "produtos" WHERE "produtos"."id" = ? LIMIT ?[0m  [["id", 48], ["LIMIT", 1]]
+  ↳ app/controllers/produtos_controller.rb:32
+  Rendering produtos/new.html.erb within layouts/application
+  [1m[36mDepartamento Load (0.2ms)[0m  [1m[34mSELECT "departamentos".* FROM "departamentos"[0m
+  ↳ app/views/produtos/new.html.erb:44
+  Rendered produtos/new.html.erb within layouts/application (13.3ms)
+Completed 200 OK in 81ms (Views: 57.6ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/produtos/48/edit" for 127.0.0.1 at 2020-12-23 13:42:48 -0300
+Processing by ProdutosController#edit as HTML
+  Parameters: {"id"=>"48"}
+  [1m[36mProduto Load (0.4ms)[0m  [1m[34mSELECT  "produtos".* FROM "produtos" WHERE "produtos"."id" = ? LIMIT ?[0m  [["id", 48], ["LIMIT", 1]]
+  ↳ app/controllers/produtos_controller.rb:32
+  Rendering produtos/new.html.erb within layouts/application
+  [1m[36mDepartamento Load (0.3ms)[0m  [1m[34mSELECT "departamentos".* FROM "departamentos"[0m
+  ↳ app/views/produtos/new.html.erb:44
+  Rendered produtos/new.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 73ms (Views: 70.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/produtos/48/edit" for 127.0.0.1 at 2020-12-23 13:42:48 -0300
+Processing by ProdutosController#edit as HTML
+  Parameters: {"id"=>"48"}
+  [1m[36mProduto Load (0.2ms)[0m  [1m[34mSELECT  "produtos".* FROM "produtos" WHERE "produtos"."id" = ? LIMIT ?[0m  [["id", 48], ["LIMIT", 1]]
+  ↳ app/controllers/produtos_controller.rb:32
+  Rendering produtos/new.html.erb within layouts/application
+  [1m[36mDepartamento Load (0.3ms)[0m  [1m[34mSELECT "departamentos".* FROM "departamentos"[0m
+  ↳ app/views/produtos/new.html.erb:44
+  Rendered produtos/new.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 87ms (Views: 85.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/produtos/48/edit" for 127.0.0.1 at 2020-12-23 13:42:49 -0300
+Processing by ProdutosController#edit as HTML
+  Parameters: {"id"=>"48"}
+  [1m[36mProduto Load (0.2ms)[0m  [1m[34mSELECT  "produtos".* FROM "produtos" WHERE "produtos"."id" = ? LIMIT ?[0m  [["id", 48], ["LIMIT", 1]]
+  ↳ app/controllers/produtos_controller.rb:32
+  Rendering produtos/new.html.erb within layouts/application
+  [1m[36mDepartamento Load (0.2ms)[0m  [1m[34mSELECT "departamentos".* FROM "departamentos"[0m
+  ↳ app/views/produtos/new.html.erb:44
+  Rendered produtos/new.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 69ms (Views: 66.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/produtos/48/edit" for 127.0.0.1 at 2020-12-23 13:42:50 -0300
+Processing by ProdutosController#edit as HTML
+  Parameters: {"id"=>"48"}
+  [1m[36mProduto Load (0.2ms)[0m  [1m[34mSELECT  "produtos".* FROM "produtos" WHERE "produtos"."id" = ? LIMIT ?[0m  [["id", 48], ["LIMIT", 1]]
+  ↳ app/controllers/produtos_controller.rb:32
+  Rendering produtos/new.html.erb within layouts/application
+  [1m[36mDepartamento Load (0.3ms)[0m  [1m[34mSELECT "departamentos".* FROM "departamentos"[0m
+  ↳ app/views/produtos/new.html.erb:44
+  Rendered produtos/new.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 66ms (Views: 63.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/produtos/48/edit" for 127.0.0.1 at 2020-12-23 13:42:50 -0300
+Processing by ProdutosController#edit as HTML
+  Parameters: {"id"=>"48"}
+  [1m[36mProduto Load (0.2ms)[0m  [1m[34mSELECT  "produtos".* FROM "produtos" WHERE "produtos"."id" = ? LIMIT ?[0m  [["id", 48], ["LIMIT", 1]]
+  ↳ app/controllers/produtos_controller.rb:32
+  Rendering produtos/new.html.erb within layouts/application
+  [1m[36mDepartamento Load (0.3ms)[0m  [1m[34mSELECT "departamentos".* FROM "departamentos"[0m
+  ↳ app/views/produtos/new.html.erb:44
+  Rendered produtos/new.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 69ms (Views: 66.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-12-23 13:44:25 -0300
+Processing by ProdutosController#index as HTML
+  Rendering produtos/index.html.erb within layouts/application
+  [1m[36mProduto Load (0.3ms)[0m  [1m[34mSELECT "produtos".* FROM "produtos" ORDER BY "produtos"."nome" ASC[0m
+  ↳ app/views/produtos/index.html.erb:27
+  [1m[36mDepartamento Load (0.3ms)[0m  [1m[34mSELECT  "departamentos".* FROM "departamentos" WHERE "departamentos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/produtos/index.html.erb:31
+  [1m[36mCACHE Departamento Load (0.0ms)[0m  [1m[34mSELECT  "departamentos".* FROM "departamentos" WHERE "departamentos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/produtos/index.html.erb:31
+  [1m[36mProduto Load (0.5ms)[0m  [1m[34mSELECT  "produtos".* FROM "produtos" ORDER BY "produtos"."preco" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/produtos/index.html.erb:63
+  [1m[36mCACHE Departamento Load (0.0ms)[0m  [1m[34mSELECT  "departamentos".* FROM "departamentos" WHERE "departamentos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/produtos/index.html.erb:67
+  Rendered produtos/index.html.erb within layouts/application (24.5ms)
+Completed 200 OK in 72ms (Views: 68.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/produtos/48/edit" for 127.0.0.1 at 2020-12-23 13:44:27 -0300
+Processing by ProdutosController#edit as HTML
+  Parameters: {"id"=>"48"}
+  [1m[36mProduto Load (0.2ms)[0m  [1m[34mSELECT  "produtos".* FROM "produtos" WHERE "produtos"."id" = ? LIMIT ?[0m  [["id", 48], ["LIMIT", 1]]
+  ↳ app/controllers/produtos_controller.rb:32
+  Rendering produtos/new.html.erb within layouts/application
+  [1m[36mDepartamento Load (0.3ms)[0m  [1m[34mSELECT "departamentos".* FROM "departamentos"[0m
+  ↳ app/views/produtos/new.html.erb:44
+  Rendered produtos/new.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 69ms (Views: 65.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/produtos/48/edit" for 127.0.0.1 at 2020-12-23 13:44:56 -0300
+Processing by ProdutosController#edit as HTML
+  Parameters: {"id"=>"48"}
+  [1m[36mProduto Load (0.3ms)[0m  [1m[34mSELECT  "produtos".* FROM "produtos" WHERE "produtos"."id" = ? LIMIT ?[0m  [["id", 48], ["LIMIT", 1]]
+  ↳ app/controllers/produtos_controller.rb:32
+  Rendering produtos/new.html.erb within layouts/application
+  [1m[36mDepartamento Load (0.5ms)[0m  [1m[34mSELECT "departamentos".* FROM "departamentos"[0m
+  ↳ app/views/produtos/new.html.erb:44
+  Rendered produtos/new.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 57ms (Views: 54.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-12-23 13:45:34 -0300
+Processing by ProdutosController#index as HTML
+  Rendering produtos/index.html.erb within layouts/application
+  [1m[36mProduto Load (0.3ms)[0m  [1m[34mSELECT "produtos".* FROM "produtos" ORDER BY "produtos"."nome" ASC[0m
+  ↳ app/views/produtos/index.html.erb:27
+  [1m[36mDepartamento Load (0.2ms)[0m  [1m[34mSELECT  "departamentos".* FROM "departamentos" WHERE "departamentos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/produtos/index.html.erb:31
+  [1m[36mCACHE Departamento Load (0.0ms)[0m  [1m[34mSELECT  "departamentos".* FROM "departamentos" WHERE "departamentos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/produtos/index.html.erb:31
+  [1m[36mProduto Load (0.4ms)[0m  [1m[34mSELECT  "produtos".* FROM "produtos" ORDER BY "produtos"."preco" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/produtos/index.html.erb:63
+  [1m[36mCACHE Departamento Load (0.0ms)[0m  [1m[34mSELECT  "departamentos".* FROM "departamentos" WHERE "departamentos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/produtos/index.html.erb:67
+  Rendered produtos/index.html.erb within layouts/application (24.9ms)
+Completed 200 OK in 90ms (Views: 86.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/produtos/48/edit" for 127.0.0.1 at 2020-12-23 13:45:46 -0300
+Processing by ProdutosController#edit as HTML
+  Parameters: {"id"=>"48"}
+  [1m[36mProduto Load (0.3ms)[0m  [1m[34mSELECT  "produtos".* FROM "produtos" WHERE "produtos"."id" = ? LIMIT ?[0m  [["id", 48], ["LIMIT", 1]]
+  ↳ app/controllers/produtos_controller.rb:32
+  Rendering produtos/new.html.erb within layouts/application
+  [1m[36mDepartamento Load (0.3ms)[0m  [1m[34mSELECT "departamentos".* FROM "departamentos"[0m
+  ↳ app/views/produtos/new.html.erb:44
+  Rendered produtos/new.html.erb within layouts/application (14.3ms)
+Completed 200 OK in 92ms (Views: 89.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/produtos/48/edit" for 127.0.0.1 at 2020-12-23 13:46:02 -0300
+Processing by ProdutosController#edit as HTML
+  Parameters: {"id"=>"48"}
+  [1m[36mProduto Load (0.3ms)[0m  [1m[34mSELECT  "produtos".* FROM "produtos" WHERE "produtos"."id" = ? LIMIT ?[0m  [["id", 48], ["LIMIT", 1]]
+  ↳ app/controllers/produtos_controller.rb:32
+  Rendering produtos/new.html.erb within layouts/application
+  [1m[36mDepartamento Load (0.3ms)[0m  [1m[34mSELECT "departamentos".* FROM "departamentos"[0m
+  ↳ app/views/produtos/new.html.erb:44
+  Rendered produtos/new.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 68ms (Views: 64.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-12-23 13:46:06 -0300
+Processing by ProdutosController#index as HTML
+  Rendering produtos/index.html.erb within layouts/application
+  [1m[36mProduto Load (0.2ms)[0m  [1m[34mSELECT "produtos".* FROM "produtos" ORDER BY "produtos"."nome" ASC[0m
+  ↳ app/views/produtos/index.html.erb:27
+  [1m[36mDepartamento Load (6.2ms)[0m  [1m[34mSELECT  "departamentos".* FROM "departamentos" WHERE "departamentos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/produtos/index.html.erb:31
+  [1m[36mCACHE Departamento Load (0.0ms)[0m  [1m[34mSELECT  "departamentos".* FROM "departamentos" WHERE "departamentos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/produtos/index.html.erb:31
+  [1m[36mProduto Load (0.5ms)[0m  [1m[34mSELECT  "produtos".* FROM "produtos" ORDER BY "produtos"."preco" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/produtos/index.html.erb:63
+  [1m[36mCACHE Departamento Load (0.0ms)[0m  [1m[34mSELECT  "departamentos".* FROM "departamentos" WHERE "departamentos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/produtos/index.html.erb:67
+  Rendered produtos/index.html.erb within layouts/application (41.1ms)
+Completed 200 OK in 101ms (Views: 92.9ms | ActiveRecord: 6.9ms)
+
+
+Started GET "/produtos/48/edit" for 127.0.0.1 at 2020-12-23 13:46:40 -0300
+Processing by ProdutosController#edit as HTML
+  Parameters: {"id"=>"48"}
+  [1m[36mProduto Load (3.9ms)[0m  [1m[34mSELECT  "produtos".* FROM "produtos" WHERE "produtos"."id" = ? LIMIT ?[0m  [["id", 48], ["LIMIT", 1]]
+  ↳ app/controllers/produtos_controller.rb:32
+  Rendering produtos/new.html.erb within layouts/application
+  [1m[36mDepartamento Load (0.3ms)[0m  [1m[34mSELECT "departamentos".* FROM "departamentos"[0m
+  ↳ app/views/produtos/new.html.erb:44
+  Rendered produtos/new.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 83ms (Views: 77.0ms | ActiveRecord: 4.2ms)
+
+
+Started PATCH "/produtos/48" for 127.0.0.1 at 2020-12-23 13:46:54 -0300
+Processing by ProdutosController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"psNvLTCcE7CXwpV1AfHGkw/0S1gReBbkDKQ8GG1s9RD94WIcGKs3MhBmj5fJLaoEmoFXYL/Dk/I8nuFJzwTAnw==", "produto"=>{"nome"=>"Cadeira nova", "descricao"=>"Boa para sentar", "departamento_id"=>"2", "preco"=>"230.0", "quantidade"=>"6"}, "commit"=>"Enviar", "id"=>"48"}
+  [1m[36mProduto Load (0.2ms)[0m  [1m[34mSELECT  "produtos".* FROM "produtos" WHERE "produtos"."id" = ? LIMIT ?[0m  [["id", 48], ["LIMIT", 1]]
+  ↳ app/controllers/produtos_controller.rb:40
+No template found for ProdutosController#update, rendering head :no_content
+Completed 204 No Content in 68ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/produtos/48/edit" for 127.0.0.1 at 2020-12-23 13:53:01 -0300
+Processing by ProdutosController#edit as HTML
+  Parameters: {"id"=>"48"}
+  [1m[36mProduto Load (0.2ms)[0m  [1m[34mSELECT  "produtos".* FROM "produtos" WHERE "produtos"."id" = ? LIMIT ?[0m  [["id", 48], ["LIMIT", 1]]
+  ↳ app/controllers/produtos_controller.rb:32
+  Rendering produtos/new.html.erb within layouts/application
+  [1m[36mDepartamento Load (0.2ms)[0m  [1m[34mSELECT "departamentos".* FROM "departamentos"[0m
+  ↳ app/views/produtos/new.html.erb:44
+  Rendered produtos/new.html.erb within layouts/application (12.5ms)
+Completed 200 OK in 79ms (Views: 53.2ms | ActiveRecord: 2.5ms)
+
+
+Started PATCH "/produtos/48" for 127.0.0.1 at 2020-12-23 13:53:08 -0300
+Processing by ProdutosController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sbUPCTv3dks0PTJVKOjTsli77IS1kK7UCJFO9XGrJKijv08A+EesVldJGeDWiJV1gnzYjKF1JeKeX6aHpBZ20w==", "produto"=>{"nome"=>"Cadeira", "descricao"=>"Boa para sentar", "departamento_id"=>"1", "preco"=>"230.0", "quantidade"=>"6"}, "commit"=>"Enviar", "id"=>"48"}
+  [1m[36mProduto Load (0.2ms)[0m  [1m[34mSELECT  "produtos".* FROM "produtos" WHERE "produtos"."id" = ? LIMIT ?[0m  [["id", 48], ["LIMIT", 1]]
+  ↳ app/controllers/produtos_controller.rb:40
+Unpermitted parameter: :departamento_id
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/produtos_controller.rb:45
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/produtos_controller.rb:45
+Redirected to http://localhost:3000/
+Completed 302 Found in 9ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-12-23 13:53:08 -0300
+Processing by ProdutosController#index as HTML
+  Rendering produtos/index.html.erb within layouts/application
+  [1m[36mProduto Load (0.4ms)[0m  [1m[34mSELECT "produtos".* FROM "produtos" ORDER BY "produtos"."nome" ASC[0m
+  ↳ app/views/produtos/index.html.erb:27
+  [1m[36mDepartamento Load (0.3ms)[0m  [1m[34mSELECT  "departamentos".* FROM "departamentos" WHERE "departamentos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/produtos/index.html.erb:31
+  [1m[36mCACHE Departamento Load (0.0ms)[0m  [1m[34mSELECT  "departamentos".* FROM "departamentos" WHERE "departamentos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/produtos/index.html.erb:31
+  [1m[36mProduto Load (0.4ms)[0m  [1m[34mSELECT  "produtos".* FROM "produtos" ORDER BY "produtos"."preco" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/produtos/index.html.erb:63
+  [1m[36mCACHE Departamento Load (0.0ms)[0m  [1m[34mSELECT  "departamentos".* FROM "departamentos" WHERE "departamentos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/produtos/index.html.erb:67
+  Rendered produtos/index.html.erb within layouts/application (37.7ms)
+Completed 200 OK in 103ms (Views: 98.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/produtos/48/edit" for 127.0.0.1 at 2020-12-23 13:53:15 -0300
+Processing by ProdutosController#edit as HTML
+  Parameters: {"id"=>"48"}
+  [1m[36mProduto Load (4.3ms)[0m  [1m[34mSELECT  "produtos".* FROM "produtos" WHERE "produtos"."id" = ? LIMIT ?[0m  [["id", 48], ["LIMIT", 1]]
+  ↳ app/controllers/produtos_controller.rb:32
+  Rendering produtos/new.html.erb within layouts/application
+  [1m[36mDepartamento Load (0.3ms)[0m  [1m[34mSELECT "departamentos".* FROM "departamentos"[0m
+  ↳ app/views/produtos/new.html.erb:44
+  Rendered produtos/new.html.erb within layouts/application (10.4ms)
+Completed 200 OK in 90ms (Views: 82.4ms | ActiveRecord: 4.5ms)
+
+
+Started PATCH "/produtos/48" for 127.0.0.1 at 2020-12-23 13:53:33 -0300
+Processing by ProdutosController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"R8CnqYj766Kbrwcb4/P72ofxMepUtWeEGnguzAs7FJUc4qqYoMzPIBwLHfkrL5dNEoQt0voO4pIqQvOdqVMhGg==", "produto"=>{"nome"=>"Cadeira", "descricao"=>"Boa para sentar", "departamento_id"=>"1", "preco"=>"230.0", "quantidade"=>"6"}, "commit"=>"Enviar", "id"=>"48"}
+  [1m[36mProduto Load (0.4ms)[0m  [1m[34mSELECT  "produtos".* FROM "produtos" WHERE "produtos"."id" = ? LIMIT ?[0m  [["id", 48], ["LIMIT", 1]]
+  ↳ app/controllers/produtos_controller.rb:40
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/produtos_controller.rb:45
+  [1m[36mProduto Update (1.2ms)[0m  [1m[33mUPDATE "produtos" SET "departamento_id" = ?, "updated_at" = ? WHERE "produtos"."id" = ?[0m  [["departamento_id", 1], ["updated_at", "2020-12-23 16:53:33.759711"], ["id", 48]]
+  ↳ app/controllers/produtos_controller.rb:45
+  [1m[35m (3.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/produtos_controller.rb:45
+Redirected to http://localhost:3000/
+Completed 302 Found in 30ms (ActiveRecord: 6.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-12-23 13:53:33 -0300
+Processing by ProdutosController#index as HTML
+  Rendering produtos/index.html.erb within layouts/application
+  [1m[36mProduto Load (0.5ms)[0m  [1m[34mSELECT "produtos".* FROM "produtos" ORDER BY "produtos"."nome" ASC[0m
+  ↳ app/views/produtos/index.html.erb:27
+  [1m[36mDepartamento Load (0.2ms)[0m  [1m[34mSELECT  "departamentos".* FROM "departamentos" WHERE "departamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/produtos/index.html.erb:31
+  [1m[36mDepartamento Load (0.1ms)[0m  [1m[34mSELECT  "departamentos".* FROM "departamentos" WHERE "departamentos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/produtos/index.html.erb:31
+  [1m[36mProduto Load (0.2ms)[0m  [1m[34mSELECT  "produtos".* FROM "produtos" ORDER BY "produtos"."preco" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/produtos/index.html.erb:63
+  [1m[36mCACHE Departamento Load (0.0ms)[0m  [1m[34mSELECT  "departamentos".* FROM "departamentos" WHERE "departamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/produtos/index.html.erb:67
+  Rendered produtos/index.html.erb within layouts/application (21.6ms)
+Completed 200 OK in 71ms (Views: 68.2ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/produtos/48/edit" for 127.0.0.1 at 2020-12-23 13:54:10 -0300
+Processing by ProdutosController#edit as HTML
+  Parameters: {"id"=>"48"}
+  [1m[36mProduto Load (0.2ms)[0m  [1m[34mSELECT  "produtos".* FROM "produtos" WHERE "produtos"."id" = ? LIMIT ?[0m  [["id", 48], ["LIMIT", 1]]
+  ↳ app/controllers/produtos_controller.rb:32
+  Rendering produtos/new.html.erb within layouts/application
+  [1m[36mDepartamento Load (0.2ms)[0m  [1m[34mSELECT "departamentos".* FROM "departamentos"[0m
+  ↳ app/views/produtos/new.html.erb:44
+  Rendered produtos/new.html.erb within layouts/application (12.4ms)
+Completed 200 OK in 70ms (Views: 50.9ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/produtos/48/edit" for 127.0.0.1 at 2020-12-23 13:54:25 -0300
+Processing by ProdutosController#edit as HTML
+  Parameters: {"id"=>"48"}
+  [1m[36mProduto Load (0.2ms)[0m  [1m[34mSELECT  "produtos".* FROM "produtos" WHERE "produtos"."id" = ? LIMIT ?[0m  [["id", 48], ["LIMIT", 1]]
+  ↳ app/controllers/produtos_controller.rb:32
+  Rendering produtos/new.html.erb within layouts/application
+  Rendered produtos/new.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 54ms (Views: 52.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/produtos/48/edit" for 127.0.0.1 at 2020-12-23 13:54:29 -0300
+Processing by ProdutosController#edit as HTML
+  Parameters: {"id"=>"48"}
+  [1m[36mProduto Load (0.2ms)[0m  [1m[34mSELECT  "produtos".* FROM "produtos" WHERE "produtos"."id" = ? LIMIT ?[0m  [["id", 48], ["LIMIT", 1]]
+  ↳ app/controllers/produtos_controller.rb:32
+  Rendering produtos/new.html.erb within layouts/application
+  Rendered produtos/new.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 47ms (Views: 44.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/produtos/48/edit" for 127.0.0.1 at 2020-12-23 13:56:45 -0300
+Processing by ProdutosController#edit as HTML
+  Parameters: {"id"=>"48"}
+  [1m[36mProduto Load (0.1ms)[0m  [1m[34mSELECT  "produtos".* FROM "produtos" WHERE "produtos"."id" = ? LIMIT ?[0m  [["id", 48], ["LIMIT", 1]]
+  ↳ app/controllers/produtos_controller.rb:32
+  Rendering produtos/new.html.erb within layouts/application
+  [1m[36mDepartamento Load (0.3ms)[0m  [1m[34mSELECT "departamentos".* FROM "departamentos"[0m
+  ↳ app/views/produtos/new.html.erb:44
+  Rendered produtos/new.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 67ms (Views: 65.7ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/produtos/48" for 127.0.0.1 at 2020-12-23 13:58:06 -0300
+Processing by ProdutosController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+JVIPYbYpehjgTGvH60vMExqNWXPUBhyLASeEF4bYDrqnwg0RWh/9QD1GhrhzWn3lq0Bbdu1k0S6ynZii6YyQQ==", "produto"=>{"nome"=>"Cadeira", "descricao"=>"Boa para sentar", "departamento_id"=>"1", "preco"=>"", "quantidade"=>"12"}, "commit"=>"Enviar", "id"=>"48"}
+  [1m[36mProduto Load (0.3ms)[0m  [1m[34mSELECT  "produtos".* FROM "produtos" WHERE "produtos"."id" = ? LIMIT ?[0m  [["id", 48], ["LIMIT", 1]]
+  ↳ app/controllers/produtos_controller.rb:40
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/produtos_controller.rb:45
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/produtos_controller.rb:45
+  Rendering produtos/new.html.erb within layouts/application
+  [1m[36mDepartamento Load (0.3ms)[0m  [1m[34mSELECT "departamentos".* FROM "departamentos"[0m
+  ↳ app/views/produtos/new.html.erb:44
+  Rendered produtos/new.html.erb within layouts/application (10.5ms)
+Completed 200 OK in 71ms (Views: 64.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/produtos/48" for 127.0.0.1 at 2020-12-23 13:59:10 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/produtos/48"):
+  
+actionpack (5.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started PATCH "/produtos/48" for 127.0.0.1 at 2020-12-23 13:59:17 -0300
+Processing by ProdutosController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+JVIPYbYpehjgTGvH60vMExqNWXPUBhyLASeEF4bYDrqnwg0RWh/9QD1GhrhzWn3lq0Bbdu1k0S6ynZii6YyQQ==", "produto"=>{"nome"=>"Cadeira", "descricao"=>"Boa para sentar", "departamento_id"=>"1", "preco"=>"", "quantidade"=>"12"}, "commit"=>"Enviar", "id"=>"48"}
+  [1m[36mProduto Load (0.3ms)[0m  [1m[34mSELECT  "produtos".* FROM "produtos" WHERE "produtos"."id" = ? LIMIT ?[0m  [["id", 48], ["LIMIT", 1]]
+  ↳ app/controllers/produtos_controller.rb:40
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/produtos_controller.rb:45
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/produtos_controller.rb:45
+  Rendering produtos/new.html.erb within layouts/application
+  Rendered produtos/new.html.erb within layouts/application (6.8ms)
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 1.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `map' for nil:NilClass):
+    41:         <div class="col-sm-2">
+    42:             <div class="form-group">        
+    43:                 <%= form.label :departamento %>
+    44:                 <%= form.collection_select :departamento_id, @departamentos, :id, :nome, {}, class:"form-control" %>
+    45:             </div>
+    46:         </div>
+    47:     </div>
+  
+app/views/produtos/new.html.erb:44:in `block in _app_views_produtos_new_html_erb__2868958360339181360_47700'
+app/views/produtos/new.html.erb:8:in `_app_views_produtos_new_html_erb__2868958360339181360_47700'
+app/controllers/produtos_controller.rb:50:in `update'
+Started PATCH "/produtos/48" for 127.0.0.1 at 2020-12-23 14:00:18 -0300
+Processing by ProdutosController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+JVIPYbYpehjgTGvH60vMExqNWXPUBhyLASeEF4bYDrqnwg0RWh/9QD1GhrhzWn3lq0Bbdu1k0S6ynZii6YyQQ==", "produto"=>{"nome"=>"Cadeira", "descricao"=>"Boa para sentar", "departamento_id"=>"1", "preco"=>"", "quantidade"=>"12"}, "commit"=>"Enviar", "id"=>"48"}
+  [1m[36mProduto Load (0.4ms)[0m  [1m[34mSELECT  "produtos".* FROM "produtos" WHERE "produtos"."id" = ? LIMIT ?[0m  [["id", 48], ["LIMIT", 1]]
+  ↳ app/controllers/produtos_controller.rb:40
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/produtos_controller.rb:45
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/produtos_controller.rb:45
+  Rendering produtos/new.html.erb within layouts/application
+  [1m[36mDepartamento Load (0.4ms)[0m  [1m[34mSELECT "departamentos".* FROM "departamentos"[0m
+  ↳ app/views/produtos/new.html.erb:44
+  Rendered produtos/new.html.erb within layouts/application (19.8ms)
+Completed 200 OK in 144ms (Views: 87.9ms | ActiveRecord: 2.4ms)
+
+
+Started PATCH "/produtos/48" for 127.0.0.1 at 2020-12-23 14:00:27 -0300
+Processing by ProdutosController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hX9te+Z0Cgk1XuXvGs6lHGGHatpaDU9RXsWceS4jroiXdS1yJcTQFFYqzlrkruPbu0Be0k7oxGfIC3QL+5788w==", "produto"=>{"nome"=>"Cadeira", "descricao"=>"Boa para sentar", "departamento_id"=>"1", "preco"=>"333", "quantidade"=>"12"}, "commit"=>"Enviar", "id"=>"48"}
+  [1m[36mProduto Load (0.2ms)[0m  [1m[34mSELECT  "produtos".* FROM "produtos" WHERE "produtos"."id" = ? LIMIT ?[0m  [["id", 48], ["LIMIT", 1]]
+  ↳ app/controllers/produtos_controller.rb:40
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/produtos_controller.rb:45
+  [1m[36mProduto Update (0.6ms)[0m  [1m[33mUPDATE "produtos" SET "preco" = ?, "quantidade" = ?, "updated_at" = ? WHERE "produtos"."id" = ?[0m  [["preco", 333.0], ["quantidade", 12], ["updated_at", "2020-12-23 17:00:27.961275"], ["id", 48]]
+  ↳ app/controllers/produtos_controller.rb:45
+  [1m[35m (3.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/produtos_controller.rb:45
+Redirected to http://localhost:3000/
+Completed 302 Found in 13ms (ActiveRecord: 4.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-12-23 14:00:27 -0300
+Processing by ProdutosController#index as HTML
+  Rendering produtos/index.html.erb within layouts/application
+  [1m[36mProduto Load (0.2ms)[0m  [1m[34mSELECT "produtos".* FROM "produtos" ORDER BY "produtos"."nome" ASC[0m
+  ↳ app/views/produtos/index.html.erb:27
+  [1m[36mDepartamento Load (0.4ms)[0m  [1m[34mSELECT  "departamentos".* FROM "departamentos" WHERE "departamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/produtos/index.html.erb:31
+  [1m[36mDepartamento Load (0.2ms)[0m  [1m[34mSELECT  "departamentos".* FROM "departamentos" WHERE "departamentos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/produtos/index.html.erb:31
+  [1m[36mProduto Load (0.3ms)[0m  [1m[34mSELECT  "produtos".* FROM "produtos" ORDER BY "produtos"."preco" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/produtos/index.html.erb:63
+  [1m[36mCACHE Departamento Load (0.0ms)[0m  [1m[34mSELECT  "departamentos".* FROM "departamentos" WHERE "departamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/produtos/index.html.erb:67
+  Rendered produtos/index.html.erb within layouts/application (26.3ms)
+Completed 200 OK in 88ms (Views: 85.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-12-23 14:00:46 -0300
+Processing by ProdutosController#index as HTML
+  Rendering produtos/index.html.erb within layouts/application
+  [1m[36mProduto Load (0.3ms)[0m  [1m[34mSELECT "produtos".* FROM "produtos" ORDER BY "produtos"."nome" ASC[0m
+  ↳ app/views/produtos/index.html.erb:27
+  [1m[36mDepartamento Load (0.1ms)[0m  [1m[34mSELECT  "departamentos".* FROM "departamentos" WHERE "departamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/produtos/index.html.erb:31
+  [1m[36mDepartamento Load (0.1ms)[0m  [1m[34mSELECT  "departamentos".* FROM "departamentos" WHERE "departamentos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/produtos/index.html.erb:31
+  [1m[36mProduto Load (0.3ms)[0m  [1m[34mSELECT  "produtos".* FROM "produtos" ORDER BY "produtos"."preco" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/produtos/index.html.erb:63
+  [1m[36mCACHE Departamento Load (0.0ms)[0m  [1m[34mSELECT  "departamentos".* FROM "departamentos" WHERE "departamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/produtos/index.html.erb:67
+  Rendered produtos/index.html.erb within layouts/application (14.2ms)
+Completed 200 OK in 82ms (Views: 78.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/produtos/new" for 127.0.0.1 at 2020-12-23 14:00:49 -0300
+Processing by ProdutosController#new as HTML
+  Rendering produtos/new.html.erb within layouts/application
+  [1m[36mDepartamento Load (0.3ms)[0m  [1m[34mSELECT "departamentos".* FROM "departamentos"[0m
+  ↳ app/views/produtos/new.html.erb:44
+  Rendered produtos/new.html.erb within layouts/application (10.3ms)
+Completed 200 OK in 81ms (Views: 78.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/departamentos" for 127.0.0.1 at 2020-12-23 14:00:56 -0300
+Processing by DepartamentosController#index as HTML
+  Rendering departamentos/index.html.erb within layouts/application
+  [1m[36mDepartamento Load (0.3ms)[0m  [1m[34mSELECT "departamentos".* FROM "departamentos"[0m
+  ↳ app/views/departamentos/index.html.erb:14
+  Rendered departamentos/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 91ms (Views: 85.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/departamentos/1/edit" for 127.0.0.1 at 2020-12-23 14:01:00 -0300
+Processing by DepartamentosController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDepartamento Load (0.2ms)[0m  [1m[34mSELECT  "departamentos".* FROM "departamentos" WHERE "departamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/departamentos_controller.rb:67
+  Rendering departamentos/edit.html.erb within layouts/application
+  Rendered departamentos/_form.html.erb (3.4ms)
+  Rendered departamentos/edit.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 74ms (Views: 67.7ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/departamentos/1" for 127.0.0.1 at 2020-12-23 14:01:06 -0300
+Processing by DepartamentosController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gQnp5OTS8a6xurr7ansyC5lAWnHJhEziDPcGFpMovemxLlPMEqSmks2FT2pQpGoXHt1sN1FV/k/CcXtipp2MoA==", "departamento"=>{"nome"=>"teste testes"}, "commit"=>"Atualizar Departamento", "id"=>"1"}
+  [1m[36mDepartamento Load (0.3ms)[0m  [1m[34mSELECT  "departamentos".* FROM "departamentos" WHERE "departamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/departamentos_controller.rb:67
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/departamentos_controller.rb:44
+  [1m[36mDepartamento Update (0.6ms)[0m  [1m[33mUPDATE "departamentos" SET "nome" = ?, "updated_at" = ? WHERE "departamentos"."id" = ?[0m  [["nome", "teste testes"], ["updated_at", "2020-12-23 17:01:07.001768"], ["id", 1]]
+  ↳ app/controllers/departamentos_controller.rb:44
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/departamentos_controller.rb:44
+Redirected to http://localhost:3000/departamentos/1
+Completed 302 Found in 10ms (ActiveRecord: 3.1ms)
+
+
+Started GET "/departamentos/1" for 127.0.0.1 at 2020-12-23 14:01:07 -0300
+Processing by DepartamentosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDepartamento Load (0.2ms)[0m  [1m[34mSELECT  "departamentos".* FROM "departamentos" WHERE "departamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/departamentos_controller.rb:67
+  Rendering departamentos/show.html.erb within layouts/application
+  Rendered departamentos/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 69ms (Views: 59.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/departamentos" for 127.0.0.1 at 2020-12-23 14:01:24 -0300
+Processing by DepartamentosController#index as HTML
+  Rendering departamentos/index.html.erb within layouts/application
+  [1m[36mDepartamento Load (1.4ms)[0m  [1m[34mSELECT "departamentos".* FROM "departamentos"[0m
+  ↳ app/views/departamentos/index.html.erb:14
+  Rendered departamentos/index.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 68ms (Views: 62.3ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-12-23 14:01:25 -0300
+Processing by ProdutosController#index as HTML
+  Rendering produtos/index.html.erb within layouts/application
+  [1m[36mProduto Load (0.3ms)[0m  [1m[34mSELECT "produtos".* FROM "produtos" ORDER BY "produtos"."nome" ASC[0m
+  ↳ app/views/produtos/index.html.erb:27
+  [1m[36mDepartamento Load (0.2ms)[0m  [1m[34mSELECT  "departamentos".* FROM "departamentos" WHERE "departamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/produtos/index.html.erb:31
+  [1m[36mDepartamento Load (0.2ms)[0m  [1m[34mSELECT  "departamentos".* FROM "departamentos" WHERE "departamentos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/produtos/index.html.erb:31
+  [1m[36mProduto Load (0.4ms)[0m  [1m[34mSELECT  "produtos".* FROM "produtos" ORDER BY "produtos"."preco" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/produtos/index.html.erb:63
+  [1m[36mCACHE Departamento Load (0.0ms)[0m  [1m[34mSELECT  "departamentos".* FROM "departamentos" WHERE "departamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/produtos/index.html.erb:67
+  Rendered produtos/index.html.erb within layouts/application (14.5ms)
+Completed 200 OK in 71ms (Views: 68.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/departamentos" for 127.0.0.1 at 2020-12-23 14:01:32 -0300
+Processing by DepartamentosController#index as HTML
+  Rendering departamentos/index.html.erb within layouts/application
+  [1m[36mDepartamento Load (0.3ms)[0m  [1m[34mSELECT "departamentos".* FROM "departamentos"[0m
+  ↳ app/views/departamentos/index.html.erb:14
+  Rendered departamentos/index.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 78ms (Views: 75.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/departamentos/1/edit" for 127.0.0.1 at 2020-12-23 14:01:35 -0300
+Processing by DepartamentosController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDepartamento Load (0.1ms)[0m  [1m[34mSELECT  "departamentos".* FROM "departamentos" WHERE "departamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/departamentos_controller.rb:67
+  Rendering departamentos/edit.html.erb within layouts/application
+  Rendered departamentos/_form.html.erb (3.2ms)
+  Rendered departamentos/edit.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 81ms (Views: 78.0ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/departamentos/1" for 127.0.0.1 at 2020-12-23 14:01:39 -0300
+Processing by DepartamentosController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3MKokVC2ulFbHr7W5Wmb+B0603o4LsnIyAbU5rBaOoPs5RK5psDtbSchS0fftsPkmqflPKD/e2UGgKmShe8Lyg==", "departamento"=>{"nome"=>"Eletrônicos"}, "commit"=>"Atualizar Departamento", "id"=>"1"}
+  [1m[36mDepartamento Load (0.2ms)[0m  [1m[34mSELECT  "departamentos".* FROM "departamentos" WHERE "departamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/departamentos_controller.rb:67
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/departamentos_controller.rb:44
+  [1m[36mDepartamento Update (0.6ms)[0m  [1m[33mUPDATE "departamentos" SET "nome" = ?, "updated_at" = ? WHERE "departamentos"."id" = ?[0m  [["nome", "Eletrônicos"], ["updated_at", "2020-12-23 17:01:39.317522"], ["id", 1]]
+  ↳ app/controllers/departamentos_controller.rb:44
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/departamentos_controller.rb:44
+Redirected to http://localhost:3000/departamentos/1
+Completed 302 Found in 9ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/departamentos/1" for 127.0.0.1 at 2020-12-23 14:01:39 -0300
+Processing by DepartamentosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mDepartamento Load (0.2ms)[0m  [1m[34mSELECT  "departamentos".* FROM "departamentos" WHERE "departamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/departamentos_controller.rb:67
+  Rendering departamentos/show.html.erb within layouts/application
+  Rendered departamentos/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 57ms (Views: 54.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-12-23 14:01:41 -0300
+Processing by ProdutosController#index as HTML
+  Rendering produtos/index.html.erb within layouts/application
+  [1m[36mProduto Load (0.3ms)[0m  [1m[34mSELECT "produtos".* FROM "produtos" ORDER BY "produtos"."nome" ASC[0m
+  ↳ app/views/produtos/index.html.erb:27
+  [1m[36mDepartamento Load (0.2ms)[0m  [1m[34mSELECT  "departamentos".* FROM "departamentos" WHERE "departamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/produtos/index.html.erb:31
+  [1m[36mDepartamento Load (0.2ms)[0m  [1m[34mSELECT  "departamentos".* FROM "departamentos" WHERE "departamentos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/produtos/index.html.erb:31
+  [1m[36mProduto Load (0.8ms)[0m  [1m[34mSELECT  "produtos".* FROM "produtos" ORDER BY "produtos"."preco" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/produtos/index.html.erb:63
+  [1m[36mCACHE Departamento Load (0.0ms)[0m  [1m[34mSELECT  "departamentos".* FROM "departamentos" WHERE "departamentos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/produtos/index.html.erb:67
+  Rendered produtos/index.html.erb within layouts/application (18.8ms)
+Completed 200 OK in 76ms (Views: 72.5ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/produtos/48/edit" for 127.0.0.1 at 2020-12-23 14:01:48 -0300
+Processing by ProdutosController#edit as HTML
+  Parameters: {"id"=>"48"}
+  [1m[36mProduto Load (0.2ms)[0m  [1m[34mSELECT  "produtos".* FROM "produtos" WHERE "produtos"."id" = ? LIMIT ?[0m  [["id", 48], ["LIMIT", 1]]
+  ↳ app/controllers/produtos_controller.rb:32
+  Rendering produtos/new.html.erb within layouts/application
+  [1m[36mDepartamento Load (0.5ms)[0m  [1m[34mSELECT "departamentos".* FROM "departamentos"[0m
+  ↳ app/views/produtos/new.html.erb:44
+  Rendered produtos/new.html.erb within layouts/application (9.6ms)
+Completed 200 OK in 79ms (Views: 76.8ms | ActiveRecord: 0.7ms)
+
+
+Started PATCH "/produtos/48" for 127.0.0.1 at 2020-12-23 14:01:53 -0300
+Processing by ProdutosController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"EbiqzdMLQig6dHF2bfqebIFhsXqLho6SgXMrqqZOuupKmqf8+zxmqr3Qa5SlJvL7FBStQiU9C4SxSfb7BCaPZQ==", "produto"=>{"nome"=>"Cadeira", "descricao"=>"Boa para sentar", "departamento_id"=>"2", "preco"=>"333.0", "quantidade"=>"12"}, "commit"=>"Enviar", "id"=>"48"}
+  [1m[36mProduto Load (0.3ms)[0m  [1m[34mSELECT  "produtos".* FROM "produtos" WHERE "produtos"."id" = ? LIMIT ?[0m  [["id", 48], ["LIMIT", 1]]
+  ↳ app/controllers/produtos_controller.rb:40
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/produtos_controller.rb:45
+  [1m[36mProduto Update (0.9ms)[0m  [1m[33mUPDATE "produtos" SET "departamento_id" = ?, "updated_at" = ? WHERE "produtos"."id" = ?[0m  [["departamento_id", 2], ["updated_at", "2020-12-23 17:01:53.804004"], ["id", 48]]
+  ↳ app/controllers/produtos_controller.rb:45
+  [1m[35m (4.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/produtos_controller.rb:45
+Redirected to http://localhost:3000/
+Completed 302 Found in 15ms (ActiveRecord: 5.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-12-23 14:01:53 -0300
+Processing by ProdutosController#index as HTML
+  Rendering produtos/index.html.erb within layouts/application
+  [1m[36mProduto Load (0.3ms)[0m  [1m[34mSELECT "produtos".* FROM "produtos" ORDER BY "produtos"."nome" ASC[0m
+  ↳ app/views/produtos/index.html.erb:27
+  [1m[36mDepartamento Load (0.2ms)[0m  [1m[34mSELECT  "departamentos".* FROM "departamentos" WHERE "departamentos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/produtos/index.html.erb:31
+  [1m[36mCACHE Departamento Load (0.0ms)[0m  [1m[34mSELECT  "departamentos".* FROM "departamentos" WHERE "departamentos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/produtos/index.html.erb:31
+  [1m[36mProduto Load (0.4ms)[0m  [1m[34mSELECT  "produtos".* FROM "produtos" ORDER BY "produtos"."preco" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/produtos/index.html.erb:63
+  [1m[36mCACHE Departamento Load (0.1ms)[0m  [1m[34mSELECT  "departamentos".* FROM "departamentos" WHERE "departamentos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/produtos/index.html.erb:67
+  Rendered produtos/index.html.erb within layouts/application (15.2ms)
+Completed 200 OK in 70ms (Views: 66.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-12-23 14:02:06 -0300
+Processing by ProdutosController#index as HTML
+  Rendering produtos/index.html.erb within layouts/application
+  [1m[36mProduto Load (0.2ms)[0m  [1m[34mSELECT "produtos".* FROM "produtos" ORDER BY "produtos"."nome" ASC[0m
+  ↳ app/views/produtos/index.html.erb:27
+  [1m[36mDepartamento Load (0.1ms)[0m  [1m[34mSELECT  "departamentos".* FROM "departamentos" WHERE "departamentos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/produtos/index.html.erb:31
+  [1m[36mCACHE Departamento Load (0.0ms)[0m  [1m[34mSELECT  "departamentos".* FROM "departamentos" WHERE "departamentos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/produtos/index.html.erb:31
+  [1m[36mProduto Load (0.3ms)[0m  [1m[34mSELECT  "produtos".* FROM "produtos" ORDER BY "produtos"."preco" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/produtos/index.html.erb:63
+  [1m[36mCACHE Departamento Load (0.0ms)[0m  [1m[34mSELECT  "departamentos".* FROM "departamentos" WHERE "departamentos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/produtos/index.html.erb:67
+  Rendered produtos/index.html.erb within layouts/application (10.1ms)
+Completed 200 OK in 51ms (Views: 48.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-12-23 14:02:08 -0300
+Processing by ProdutosController#index as HTML
+  Rendering produtos/index.html.erb within layouts/application
+  [1m[36mProduto Load (0.3ms)[0m  [1m[34mSELECT "produtos".* FROM "produtos" ORDER BY "produtos"."nome" ASC[0m
+  ↳ app/views/produtos/index.html.erb:27
+  [1m[36mDepartamento Load (0.1ms)[0m  [1m[34mSELECT  "departamentos".* FROM "departamentos" WHERE "departamentos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/produtos/index.html.erb:31
+  [1m[36mCACHE Departamento Load (0.0ms)[0m  [1m[34mSELECT  "departamentos".* FROM "departamentos" WHERE "departamentos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/produtos/index.html.erb:31
+  [1m[36mProduto Load (0.4ms)[0m  [1m[34mSELECT  "produtos".* FROM "produtos" ORDER BY "produtos"."preco" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/produtos/index.html.erb:63
+  [1m[36mCACHE Departamento Load (0.0ms)[0m  [1m[34mSELECT  "departamentos".* FROM "departamentos" WHERE "departamentos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/produtos/index.html.erb:67
+  Rendered produtos/index.html.erb within layouts/application (11.2ms)
+Completed 200 OK in 51ms (Views: 48.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-12-23 14:02:08 -0300
+Processing by ProdutosController#index as HTML
+  Rendering produtos/index.html.erb within layouts/application
+  [1m[36mProduto Load (0.3ms)[0m  [1m[34mSELECT "produtos".* FROM "produtos" ORDER BY "produtos"."nome" ASC[0m
+  ↳ app/views/produtos/index.html.erb:27
+  [1m[36mDepartamento Load (0.1ms)[0m  [1m[34mSELECT  "departamentos".* FROM "departamentos" WHERE "departamentos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/produtos/index.html.erb:31
+  [1m[36mCACHE Departamento Load (0.0ms)[0m  [1m[34mSELECT  "departamentos".* FROM "departamentos" WHERE "departamentos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/produtos/index.html.erb:31
+  [1m[36mProduto Load (0.3ms)[0m  [1m[34mSELECT  "produtos".* FROM "produtos" ORDER BY "produtos"."preco" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/produtos/index.html.erb:63
+  [1m[36mCACHE Departamento Load (0.0ms)[0m  [1m[34mSELECT  "departamentos".* FROM "departamentos" WHERE "departamentos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/produtos/index.html.erb:67
+  Rendered produtos/index.html.erb within layouts/application (11.7ms)
+Completed 200 OK in 50ms (Views: 47.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-12-23 14:02:40 -0300
+Processing by ProdutosController#index as HTML
+  Rendering produtos/index.html.erb within layouts/application
+  [1m[36mProduto Load (0.4ms)[0m  [1m[34mSELECT "produtos".* FROM "produtos" ORDER BY "produtos"."nome" ASC[0m
+  ↳ app/views/produtos/index.html.erb:27
+  [1m[36mDepartamento Load (0.1ms)[0m  [1m[34mSELECT  "departamentos".* FROM "departamentos" WHERE "departamentos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/produtos/index.html.erb:31
+  [1m[36mCACHE Departamento Load (0.0ms)[0m  [1m[34mSELECT  "departamentos".* FROM "departamentos" WHERE "departamentos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/produtos/index.html.erb:31
+  [1m[36mProduto Load (0.3ms)[0m  [1m[34mSELECT  "produtos".* FROM "produtos" ORDER BY "produtos"."preco" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/produtos/index.html.erb:63
+  [1m[36mCACHE Departamento Load (0.0ms)[0m  [1m[34mSELECT  "departamentos".* FROM "departamentos" WHERE "departamentos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/produtos/index.html.erb:67
+  Rendered produtos/index.html.erb within layouts/application (32.6ms)
+Completed 200 OK in 85ms (Views: 77.5ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/produtos/48/edit" for 127.0.0.1 at 2020-12-23 16:53:10 -0300
+Processing by ProdutosController#edit as HTML
+  Parameters: {"id"=>"48"}
+  [1m[36mProduto Load (0.7ms)[0m  [1m[34mSELECT  "produtos".* FROM "produtos" WHERE "produtos"."id" = ? LIMIT ?[0m  [["id", 48], ["LIMIT", 1]]
+  ↳ app/controllers/produtos_controller.rb:32
+  Rendering produtos/new.html.erb within layouts/application
+  [1m[36mDepartamento Load (0.6ms)[0m  [1m[34mSELECT "departamentos".* FROM "departamentos"[0m
+  ↳ app/views/produtos/new.html.erb:44
+  Rendered produtos/new.html.erb within layouts/application (27.3ms)
+Completed 200 OK in 144ms (Views: 123.0ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-12-23 16:53:12 -0300
+Processing by ProdutosController#index as HTML
+  Rendering produtos/index.html.erb within layouts/application
+  [1m[36mProduto Load (1.2ms)[0m  [1m[34mSELECT "produtos".* FROM "produtos" ORDER BY "produtos"."nome" ASC[0m
+  ↳ app/views/produtos/index.html.erb:27
+  [1m[36mDepartamento Load (0.5ms)[0m  [1m[34mSELECT  "departamentos".* FROM "departamentos" WHERE "departamentos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/produtos/index.html.erb:31
+  [1m[36mCACHE Departamento Load (0.0ms)[0m  [1m[34mSELECT  "departamentos".* FROM "departamentos" WHERE "departamentos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/produtos/index.html.erb:31
+  [1m[36mProduto Load (0.7ms)[0m  [1m[34mSELECT  "produtos".* FROM "produtos" ORDER BY "produtos"."preco" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/produtos/index.html.erb:63
+  [1m[36mCACHE Departamento Load (0.0ms)[0m  [1m[34mSELECT  "departamentos".* FROM "departamentos" WHERE "departamentos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/produtos/index.html.erb:67
+  Rendered produtos/index.html.erb within layouts/application (22.1ms)
+Completed 200 OK in 94ms (Views: 86.5ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/produtos/new" for 127.0.0.1 at 2020-12-23 16:53:13 -0300
+Processing by ProdutosController#new as HTML
+  Rendering produtos/new.html.erb within layouts/application
+  [1m[36mDepartamento Load (0.2ms)[0m  [1m[34mSELECT "departamentos".* FROM "departamentos"[0m
+  ↳ app/views/produtos/new.html.erb:44
+  Rendered produtos/new.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 56ms (Views: 54.8ms | ActiveRecord: 0.2ms)
+
+

@@ -6,6 +6,19 @@
 
 
 <%= form_for(@produto) do |form| %>
+
+<%
+=begin%>
+  
+    // quando o @produto for new (não existente no BD)
+    <form action="/produtos" method="POST">
+
+    // quando o @produto vier do BD (@produto.id estiver preenchido)
+    <form action="/produtos/48" method="POST">
+<%
+=end%>
+
+
     <div class="row"> 
         <div class="col-sm-8">
             <div class="form-group">        
@@ -51,5 +64,5 @@
         </div>
     </div>
 
-    <%= form.submit "Criar", class:"btn btn-primary"%>
+    <%= form.submit "Enviar", class:"btn btn-primary"%>
 <% end %>

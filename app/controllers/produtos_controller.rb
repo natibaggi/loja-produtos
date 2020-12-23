@@ -8,6 +8,8 @@ class ProdutosController < ApplicationController
     def new
         @produto = Produto.new
         @departamentos = Departamento.all
+
+        render :new
     end
 
     def create
@@ -23,15 +25,30 @@ class ProdutosController < ApplicationController
         end
     end
 
+    # navegador está pedindo o form de edição do produto de ID=params[:id]
+    # params = Hash ou seja, sempre acessar com [] que nem o array
     def edit
         id = params[:id]
         @produto = Produto.find(id)
-        @departamentos = Departamento.all
-        render :new
+        @departamentos = Departamento.all()
+        render(:new)
     end
 
+    # navegador está enviando os params para serem atualizados no produto
     def update
+        id = params[:id]
+        @produto = Produto.find(id) # busca do BD
         
+        # resgata valores enviados no formulário
+        valores = params.require(:produto).permit(:nome, :descricao, :preco, :quantidade, :departamento_id) 
+
+        if @produto.update(valores)
+            flash[:notice] = "Produto atualizado com sucesso!"
+            redirect_to root_url
+        else
+            @departamentos = Departamento.all
+            render :new
+        end
     end
 
     def destroy
